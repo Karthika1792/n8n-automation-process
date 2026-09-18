@@ -1,4 +1,4 @@
-
+// command manager that allows us to install and run Playwright //
 
 {
   "name": "n8n-automation-process",

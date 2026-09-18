@@ -1,1 +1,54 @@
+// Dummpy application for testing //
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>QA Automation Demo</title>
+</head>
+<body>
+
+  <h1>Login</h1>
+
+  <form id="loginForm">
+
+    <label for="username">Email / Username</label>
+    <input id="username" type="text">
+
+    <label for="password">Password</label>
+    <input id="password" type="password">
+
+    <button type="submit">Login</button>
+
+  </form>
+
+  <p id="message"></p>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+      const message = document.getElementById("message");
+
+      if (!username) {
+        message.textContent = "Username is required";
+        return;
+      }
+
+      if (!password) {
+        message.textContent = "Password is required";
+        return;
+      }
+
+      if (username === "testuser@example.com" && password === "Test@123") {
+        message.textContent = "Login successful";
+      } else {
+        message.textContent = "Invalid username or password";
+      }
+    });
+  </script>
+
+</body>
+</html>

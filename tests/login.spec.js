@@ -43,5 +43,16 @@ test.describe('Login Page Tests', () => {
     await expect(page.locator('#message'))
       .toHaveText('Password is required');
   });
+  
+  ///////// Test cases for the email validation ////////
+  
+    test('TC_LOGIN_005 - Email field should accept valid email', async ({ page }) => {
+    await page.goto('/index.html');
 
+    const emailField = page.getByLabel('Email / Username');
+
+     await expect(emailField).toHaveAttribute('type', 'email'); ////// Positive case and Enable it as developer fix as 3rd scenarior
+    // await expect(emailField).toHaveAttribute('type', 'text'); ///// Negative cases test
+   
+  });
 });
